@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="eZee Services - Trusted computer store offering laptops, printers, accessories and after-sales service in Peth Vadgaon.">
+    <title>eZee Services</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1><span class="logo">eZee</span> Services</h1>
+    <p>Your trusted computer store</p>
+</header>
+
+<nav role="navigation" aria-label="Main navigation">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="banner">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475" alt="Electronics Store interior with computers and accessories" loading="lazy">
+</div>
+<main class="container">
+    <section id="home">
+        <h2>Welcome</h2>
+        <p></p>
+    </section>
+
+    <section id="showroom">
+        <h2>Showroom Gallery</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laptop Display" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Monitor Setup" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gaming Keyboard" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wireless Mouse" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Wireless Printer" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1531492746076-161ca9bcad58?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="External Hard Drive" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Laptop Accessories" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1545127398-14699f92334b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Computer Speakers" loading="lazy">
+        </div>
+    </section>
+
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            eZee Services has been serving customers with quality laptops
+            and reliable service. Customer satisfaction is our top priority.
+        </p>
+    </section>
+
+    <section id="services">
+        <h2>After-Sales Services</h2>
+        <p>
+            We provide comprehensive after-sales support for all hardware products. Our services include:
+        </p>
+        <ul>
+            <li><strong>Hardware Repairs:</strong> Expert repair for laptops, printers, monitors, and accessories.</li>
+            <li><strong>Maintenance & Upgrades:</strong> Regular check-ups, software updates, and hardware upgrades.</li>
+            <li><strong>Warranty Support:</strong> Full warranty coverage on all purchases with quick replacements.</li>
+            <li><strong>Technical Support:</strong> On-site and remote assistance for setup and troubleshooting.</li>
+            <li><strong>Data Recovery:</strong> Safe recovery of lost data from hard drives and devices.</li>
+        </ul>
+        <p>Contact us for any hardware-related issues — we're here to help!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Owner:</strong> Arif Jamadar</p>
+        <p><strong>Address:</strong> Near Ch. Shivaji Maharaj Chowk, Peth Vadgaon</p>
+        <p><strong>Phone:</strong> <a href="tel:+917588576688">+91 75885 76688</a></p>
+        <p><strong>Email:</strong> <a href="mailto:ezeeservices@gmail.com">ezeeservices@gmail.com</a></p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; <span id="year">2026</span> eZee Services. All rights reserved.</p>
+    <p><a href="#home">Home</a> | <a href="#services">Services</a> | <a href="#about">About</a> | <a href="#contact">Contact</a> | Social: [Facebook] [Twitter]</p>
+</footer>
+
+<script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scrolling for nav links
+    function smoothScroll(target) {
+        const element = document.querySelector(target);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Typing effect for welcome text
+    function typeWriter(text, element, speed = 50) {
+        let i = 0;
+        element.textContent = '';
+        function type() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        // Smooth scroll for nav
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                smoothScroll(this.getAttribute('href'));
+            });
+        });
+
+        // Typing effect on welcome
+        const welcomeText = "Welcome to eZee Services. We provide comprehensive after-sales hardware services.";
+        typeWriter(welcomeText, document.querySelector('#home p'), 30);
+    });
+</script>
+
+</body>
+</html>
